@@ -1,0 +1,12 @@
+# *************************************
+# WS Ch2-2
+# Use print to output the following strings:
+# What's the big idea?
+# "What's the big idea?", she said
+# *************************************
+
+question1 = "What's the big idea?";
+question2 = ""What's the big idea?"";
+
+print (question1);
+print (question2);

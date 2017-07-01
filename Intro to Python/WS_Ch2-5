@@ -1,0 +1,11 @@
+# *************************************
+# WS Ch2-5
+# Determine number of digits in Integer
+
+# *************************************
+import math;
+
+n = 234567896574345837456
+digits = int(math.log10(n))+1;
+
+print(digits);

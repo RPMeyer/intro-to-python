@@ -1,0 +1,19 @@
+# *********************************
+# WS Ch2-6
+# Use the // operator to convert 8911 minutes to days, hours, and minutes
+# *********************************
+
+minutes = 8911;
+print(minutes);
+dayInMinutes = 60*24;
+print('day in minutes ' dayInMinutes);
+hourInMinutes = 60;
+print('hour in minutes 'dayInMinutes);
+overflow= 0;
+
+days = minutes // dayInMinutes;
+overflow = minutes - days*dayInMinutes;
+print("current overflow is "+ overflow);
+
+hours = overflow // hourInMinutes;
+print(hours)
