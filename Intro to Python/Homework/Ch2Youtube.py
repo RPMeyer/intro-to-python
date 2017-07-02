@@ -3,6 +3,9 @@
 #   Then have the program prompt the user for the number of years t that the money will be compounded for. Calculate and
 #   print the final amount after t years
 
+#YOUTUBE VIDEO LINKS (1/2): https://youtu.be/i40Xnfk20jQ
+#YOUTUBE VIDEO LINKS (2/2): https://youtu.be/X-34cY7BMJY
+
 p = 10000;
 n = 12;
 r = .08;
