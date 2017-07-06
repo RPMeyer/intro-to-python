@@ -14,8 +14,31 @@ wn.bgcolor("lightgreen")
 wn.title("Alex draws a square")
 tess = turtle.Turtle()
 
-def draw_rects(t,W1,H1,W2,H2):
+#HELPER FUNCTION FOR POSITIONING TURTLE DRAW ORIGIN
+def turtlePosition(t,penX,penY):
+    '''FUNCTION FOR POSITIONING TURTLE DRAW ORIGIN. Moves to penX and penY'''
+    t.penup() #don't draw when turtle moves
+    t.hideturtle() #make the turtle invisible
+    # t.setx(penX) REDUNDENT GIVEN GOTO
+    # t.sety(penY) REDUNDENT GIVEN GOTO
+    t.goto(penX,penY)
+    t.showturtle() #make the turtle visible
+    t.pendown() #draw when the turtle moves
 
+#HELPER FUNCTION FOR DRAWING THE RECTANGLES
+def draw_square(t,w,h):
+    '''Used to draw rectangle of various (w)idth and (h)eight'''
+    for i in range(0,1+1,1):
+        t.forward(w)
+        t.left(90)
+        t.forward(h)
+        t.left(90)
+
+def draw_rects(t,W1,H1,W2,H2):
+    '''Draws 2 recangles of (W1)idth, (H1)eight, (W2)idth, (H2)eight using the draw_square() function'''
+    draw_square(t,W1,H1)
+    turtlePosition(t,(1/2)*W1,-(1/2)*H2) #NEGATIVE H2 SO THAT TURTLE DRAWS THROUGH CENTER OF FIRST RECT (W1)
+    draw_square(t,W2,H2)
 
 #function to run
 draw_rects(tess,200,20,25,400)
