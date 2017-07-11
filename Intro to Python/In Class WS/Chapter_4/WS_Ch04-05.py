@@ -31,8 +31,6 @@ for row in (headers, factorialInitials, factorialList):
 
 #print(factorialList, factorialInitials)
 
-
-
 # *************************************************
 # WS ch 4_5A
 #
