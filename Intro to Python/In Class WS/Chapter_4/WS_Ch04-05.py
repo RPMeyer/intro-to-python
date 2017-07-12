@@ -19,14 +19,20 @@ for i in range(1, 10+1, 1):
     factorialList.append(factorial(i))
 
 zippedList = list(zip(factorialInitials, factorialList))
+print("zipped list: ", zippedList)
 print('\n'.join(map(str, factorialList)))
+
+for row in zippedList:
+    print(row)
 
 headers = ["name","level","value"]
 
-max_lens = [len(str(max(i, key=lambda x: len(str(x))))) for i in zip(headers, factorialInitials, factorialList)]
+#max_lens = [len(str(max(i, key=lambda x: len(str(x))))) for i in zip(factorialList)]
+#print('max_lens: ', max_lens)
 
-for row in (headers, factorialInitials, factorialList):
-    print ('|'.join('{0:{width}}'.format(x, width=y) for x, y in zip(row, max_lens)))
+
+for row in (zippedList):
+    print ('|'.join('{0:{width}}'.format(x, width=y) for x, y in zip(row, factorialList)))
 
 
 #print(factorialList, factorialInitials)
