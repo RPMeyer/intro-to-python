@@ -32,7 +32,7 @@ headers = ["name","level","value"]
 
 
 for row in (zippedList):
-    print ('|'.join('{0:{width}}'.format(x, width=y) for x, y in zip(row, factorialList)))
+    print ('|'.join('{0:{width}}'.format(x, width=y) for x, y in zip(headers,factorialList)))
 
 
 #print(factorialList, factorialInitials)
