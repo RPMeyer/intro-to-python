@@ -10,7 +10,7 @@ trueY = True
 falseX = False
 falseY = False
 
-#TRUTH TABLE for not(x and y)
+#TRUTH TABLE for not(x and y):
 
 
 
