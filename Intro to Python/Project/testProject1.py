@@ -38,14 +38,14 @@ def repeatShape(magVal):
             createShape()
             break
 
-def createPolys(poly1, poly2,poly3,poly4):
+def createPolys(poly1, poly2,poly3,poly4,c1,c2):
     ''' '''
     s = turtle.Shape("compound")
 
-    s.addcomponent(poly1, "red")
-    s.addcomponent(poly2, "blue")
-    s.addcomponent(poly3, "red")
-    s.addcomponent(poly4, "blue")
+    s.addcomponent(poly1, c1)
+    s.addcomponent(poly2, c2)
+    s.addcomponent(poly3, c1)
+    s.addcomponent(poly4, c2)
 
     wn.register_shape("myshape", s)
 
@@ -54,7 +54,7 @@ poly2 = ((20,0),(30,0),(20,-10),(10,-10),(10,-20),(0,-30),(0,-20),(10,-10))
 poly3 = ((30,-10),(30,0),(20,-10),(10,-10),(10,-20),(0,-30),(10,-30))
 poly4 = ((10,-30),(30,-30),(30,-10))
 
-createPolys(poly1,poly2,poly3,poly4)
+createPolys(poly1,poly2,poly3,poly4,'red','blue')
 repeatShape(2)
 
 wn.exitonclick()
