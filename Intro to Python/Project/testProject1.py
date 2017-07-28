@@ -17,38 +17,44 @@ def createShape():
         testTurt.stamp()
         turn+= 90
 
-def repeatShape(times):
+def repeatShape(magVal):
     '''repeats defined shape (times)times'''
+    testTurt.shapesize(magVal)
     i = 0
-    trackerY = 60;
+    trackerY = 60*magVal;
     bounds = wn.screensize()
-    while (i < times):
+    while (True):
+        print(i)
         createShape()
         print(bounds)
-        if (testTurt.xcor() == wn.window_width()):
+        if  (testTurt.xcor() >= wn.window_width()):
             testTurt.setpos(0, trackerY)
             createShape()
-            trackerY = trackerY +60;
+            trackerY +=(60*magVal);
         print(testTurt.pos())
-        testTurt.forward(60)
+        testTurt.forward(60*magVal)
         i+=1
+        if (testTurt.ycor() >= wn.window_height()) and (testTurt.xcor() >= wn.window_width()):
+            createShape()
+            break
 
-s = turtle.Shape("compound")
+def createPolys(poly1, poly2,poly3,poly4):
+    ''' '''
+    s = turtle.Shape("compound")
 
-#topLeftCorner
+    s.addcomponent(poly1, "red")
+    s.addcomponent(poly2, "blue")
+    s.addcomponent(poly3, "red")
+    s.addcomponent(poly4, "blue")
+
+    wn.register_shape("myshape", s)
+
 poly1 = ((0,0),(20,0),(0,-20))
-s.addcomponent(poly1, "red")
-
 poly2 = ((20,0),(30,0),(20,-10),(10,-10),(10,-20),(0,-30),(0,-20),(10,-10))
-s.addcomponent(poly2, "blue")
-
 poly3 = ((30,-10),(30,0),(20,-10),(10,-10),(10,-20),(0,-30),(10,-30))
-s.addcomponent(poly3, "red")
-
 poly4 = ((10,-30),(30,-30),(30,-10))
-s.addcomponent(poly4, "blue")
 
-wn.register_shape("myshape", s)
+createPolys(poly1,poly2,poly3,poly4)
+repeatShape(2)
 
-repeatShape(13)
 wn.exitonclick()
