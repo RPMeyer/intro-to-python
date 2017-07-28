@@ -49,7 +49,6 @@ poly4 = ((10,-30),(30,-30),(30,-10))
 s.addcomponent(poly4, "blue")
 
 wn.register_shape("myshape", s)
-testTurt.resizemode(rmode='auto')
 
 repeatShape(13)
 wn.exitonclick()
