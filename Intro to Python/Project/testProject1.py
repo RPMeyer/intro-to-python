@@ -9,7 +9,7 @@ testTurt.penup()
 turtle.tracer(0,0)
 
 def createShape():
-    '''creates shape from stamp'''
+    '''creates shape for stamp, and stamps'''
     turn=90
     for i in range(0,4,1):
         testTurt.shape("myshape")
@@ -18,7 +18,7 @@ def createShape():
         turn+= 90
 
 def repeatShape(magVal):
-    '''repeats defined shape (times)times'''
+    '''repeats defined shape with resizing (magVal) value via stamp'''
     testTurt.shapesize(magVal)
     i = 0
     trackerY = 61*magVal;
@@ -39,7 +39,7 @@ def repeatShape(magVal):
             break
 
 def createPolys(poly1,poly2,poly3,poly4,c1,c2):
-    ''' '''
+    '''Creates a new shape that replaces the turtle ouot of poly1 through poly4. Applies colors c1 and c2 to the specified polys'''
     s = turtle.Shape("compound")
 
     s.addcomponent(poly1, c1)
