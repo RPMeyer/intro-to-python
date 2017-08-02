@@ -38,28 +38,40 @@ def stampShape(color1='blue',color2='red'):
         testTurt.stamp()
         turn+= 90
 
-def createSquare(magVal, color1, color2):
+def createSquare(magVal, color1='blue', color2='red'):
     shapeSize=61*magVal
 
     for n in range(0,4,1):
         for i in range(0,4,1):
-            stampShape()
+            stampShape(color1,color2)
             testTurt.forward(shapeSize)
         testTurt.forward(-4*shapeSize)
         testTurt.left(90)
         testTurt.forward(shapeSize)
         testTurt.right(90)
-    testTurt.forward(-4*shapeSize)
-    testTurt.right(90)
-    testTurt.forward(shapeSize)
-    testTurt.left(90)
     return testTurt.pos()
 
 def createPattern(magVal,color1,color2, times):
     '''creates a pattern of createSquare() as a (times)x(times) squares with alternating colors'''
-    for i in range(0,times,1):
-        createSquare(magVal,color1,color2)
-        testTurt.forward(61*4)
+    shapeSize=61*magVal
+    n=0
+    testTurt.shapesize(magVal)
+    while(True):
+        testTurt.goto(shapeSize*n,0)
+        for i in range(0,times,1):
+            if not i%2==0:
+                createSquare(magVal,color1,color2)
+                n+=1
+            if i%2==0:
+                createSquare(magVal,color2,color1)
+                n+=1
+
+        colorHold=color1
+        color1=color2
+        color2=colorHold
+        if n==16:
+            break
+    #createSquare(magVal)
 
 
 
