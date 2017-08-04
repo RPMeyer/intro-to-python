@@ -8,7 +8,7 @@ testTurt.penup()
 turtle.tracer(0,0)
 
 def createPolys(poly1,poly2,poly3,poly4,color1,color2):
-    '''Creates a new shape that replaces the turtle out of poly1 through poly4. Applies colors c1 and c2 to the specified polys'''
+    '''Registers a new shape that replaces the turtle out of poly1 through poly4. Applies colors c1 and c2 to the specified polys'''
     s = turtle.Shape("compound")
 
     s.addcomponent(poly1, color1)
@@ -45,11 +45,11 @@ def createSquare(magVal, color1='blue', color2='red'):
         testTurt.right(90)
     return testTurt.pos() #used for debugging - not entirely necessary in current code factor
 
-def swapColors(color1,color2,colorHold=''):
+def swapColors(color1,color2,colorHolder=''):
     '''uses colorHolder variable to effectively swap color1 and color2, then returns color1 and color2'''
-    colorHold=color1
+    colorHolder=color1
     color1=color2
-    color2=colorHold
+    color2=colorHolder
     return color1,color2
 
 def createPattern(magVal,color1,color2, times):
@@ -89,6 +89,6 @@ poly2 = ((20,0),(30,0),(20,-10),(10,-10),(10,-20),(0,-30),(0,-20),(10,-10))
 poly3 = ((30,-10),(30,0),(20,-10),(10,-10),(10,-20),(0,-30),(10,-30))
 poly4 = ((10,-30),(30,-30),(30,-10))
 
-createPattern(1,'blue', 'red',4)
+createPattern(.75,'blue', 'red',4)
 
 wn.exitonclick()
