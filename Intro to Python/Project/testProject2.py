@@ -4,7 +4,6 @@ testTurt.speed(1)
 wn = turtle.Screen()
 wn.bgcolor("lightgreen")
 wn.title("wnInfo")
-wn.setworldcoordinates(0, 0, wn.window_width(), wn.window_height())
 testTurt.penup()
 turtle.tracer(0,0)
 
@@ -25,8 +24,6 @@ def swapColors(color1,color2,colorHold=''):
     color1=color2
     color2=colorHold
     return color1,color2
-    #NOT WORKING BUT WHY THOUGH?!@?@!$#?
-
 
 def stampShape(color1='blue',color2='red'):
     '''creates shape for stamp, and stamps'''
@@ -54,6 +51,12 @@ def createSquare(magVal, color1='blue', color2='red'):
 def createPattern(magVal,color1,color2, times):
     '''creates a pattern of createSquare() as a (times)x(times) squares with alternating colors'''
     shapeSize=61*magVal
+    bounds=shapeSize*times*times
+
+    wn.setup(width=bounds-shapeSize, height=bounds-shapeSize, startx=None, starty=None)
+    wn.setworldcoordinates(0, 0, wn.window_width(), wn.window_height())
+    testTurt.penup()
+
     n=0
     testTurt.shapesize(magVal)
     while(True):
@@ -65,54 +68,9 @@ def createPattern(magVal,color1,color2, times):
             if i%2==0:
                 createSquare(magVal,color2,color1)
                 n+=1
-
-        colorHold=color1
-        color1=color2
-        color2=colorHold
+        color1,color2=swapColors(color1,color2)
         if n==16:
             break
-    #createSquare(magVal)
-
-
-
-# def repeatShape(magVal, times, color1, color2):
-#     '''repeats defined shape with resizing (magVal) value via stamp, (times) times'''
-#     testTurt.shapesize(magVal)
-#     i = 0
-#     trackerY = 61*magVal;
-#     bounds = wn.screensize()
-#     stampCount=0
-#     rowCount=0
-#     while (True):
-#         print('i counter is {}'.format(i))
-#
-#         if (stampCount%4==0):
-#             colorHold=color1
-#             color1=color2
-#             color2=colorHold
-#             stampShape(color1,color2)
-#         else:
-#             stampShape(color1,color2)
-#         stampCount+=1
-#         print('bounds are {}'.format(bounds))
-#         print('stampCount is {}'.format(stampCount))
-#         if ((testTurt.xcor() >= wn.window_width())):
-#             testTurt.setpos(0, trackerY)
-#             stampShape(color1, color2)
-#             trackerY +=(61*magVal);
-#             rowCount+=1
-#             stampCount=0
-#             stampCount+=1
-#             if (rowCount%3==0):
-#                 colorHold=color1
-#                 color1=color2
-#                 color2=colorHold
-#                 stampShape(color1,color2)
-#         testTurt.forward(61*magVal)
-#         i+=1
-#         if (testTurt.ycor() >= wn.window_height()) and (testTurt.xcor() >= wn.window_width()):
-#             stampShape()
-#             break
 
 poly1 = ((0,0),(20,0),(0,-20))
 poly2 = ((20,0),(30,0),(20,-10),(10,-10),(10,-20),(0,-30),(0,-20),(10,-10))
@@ -121,6 +79,6 @@ poly4 = ((10,-30),(30,-30),(30,-10))
 
 #createPolys(poly1,poly2,poly3,poly4,'red','blue')
 
-createPattern(1,'blue', 'red',4)
+createPattern(.75,'blue', 'red',4)
 
 wn.exitonclick()
