@@ -5,7 +5,7 @@ wn = turtle.Screen()
 wn.bgcolor("lightgreen")
 wn.title("wnInfo")
 testTurt.penup()
-turtle.tracer(0,0)
+#turtle.tracer(0,0)
 
 def createPolys(poly1,poly2,poly3,poly4,color1,color2):
     '''Registers a new shape that replaces the turtle out of poly1 through poly4. Applies colors c1 and c2 to the specified polys'''
@@ -78,6 +78,7 @@ def createPattern(magVal,color1,color2, times):
         color1,color2=swapColors(color1,color2) #assigns the new color values after being swapped after the if statement is executed
         if squareCount==(times*times): #16 due to being 4 x 4 square
             break
+
 #------------------------------------
 # IMPORTANT - backbone of the pattern
 #
