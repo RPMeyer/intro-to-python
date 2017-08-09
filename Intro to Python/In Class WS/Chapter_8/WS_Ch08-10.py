@@ -27,4 +27,4 @@ def ceasarCypher(word, shift):
 words=['hello', 'goodbye', 'maybe','find','a','way','to','not','use a for loop']
 sentence="this is a sentence to test this cypher"
 for word in words:
-    print(ceasarCypher(word, 24))
+    print(ceasarCypher(word, 26))
