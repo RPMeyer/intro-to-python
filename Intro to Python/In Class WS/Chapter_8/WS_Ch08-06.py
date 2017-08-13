@@ -30,7 +30,6 @@ def count_words_in(Sentence, lowerBound=3,upperBound=7, vowelCount=2):
     for word in sentenceList:
         if (word[lowerBound:upperBound]) and vowelCounter(word)==True:
             wordCount+=1
-            #print(word, wordCount)
     return wordCount
 
 def count_words_in_1(Sentence, lowerBound=3,upperBound=7, vowelCount=2):
@@ -40,7 +39,6 @@ def count_words_in_1(Sentence, lowerBound=3,upperBound=7, vowelCount=2):
     for word in sentenceList:
         if (word[lowerBound:upperBound]) and vowelCounter(word)==True and sometimesY(word)==True:
             wordCount+=1
-            #print(word, wordCount)
     return wordCount
 
 sometimesY('hello')

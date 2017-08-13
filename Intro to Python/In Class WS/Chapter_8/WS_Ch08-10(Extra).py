@@ -23,16 +23,11 @@ def valueOfWord(word):
     Value of word is the sum of each of its letters. Value is determined by position within alphabet squared '''
     score=0
     valuesList = findAlpha(word)
-    # print('valuesList consists of: {}'.format(valuesList))
-    # print('length of word is {}'.format(len(valuesList)))
     for i in valuesList:
         print('value of i is {}'.format(i))
         score += i**2
         print('current score is: {}'.format(score))
     return score
-
-#print(valueOfWord('hello'))
-
 
 #cutting middle or a word out (if word is longer than 3) and reutnrs new words with missing middle
 def stringWordChecker(sentence, length):

@@ -38,7 +38,6 @@ def repeat_letters_in_each_word_in(Sentence):
         holder=Sentence[len(Sentence)-1:]
         noPeriod=Sentence[:len(Sentence)-1]
         for i in noPeriod.split():
-            print(repeat_letters_in(i))
             newSent.append(repeat_letters_in(i))
         newSent.append(holder)
     return ' '.join(newSent)
