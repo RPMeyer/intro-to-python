@@ -11,6 +11,8 @@
 # If Sentence = 'to be or not to be that is the question'
 # Then the output should be:
 # ot eb ro ton ot eb taht si eht noitseuq
+#
+# YOUTUBE LINK: https://youtu.be/UoWN2WQwdZc
 
 def rev_each_word_in(Sentence):
     '''takes a sentence of words that may/not have a final period & which returns
@@ -23,12 +25,15 @@ def rev_each_word_in(Sentence):
         for word in test:
             test[test.index(word)]=word[::-1] #reverses each word individually found within test[]
         test.append(holder) #replaces the '.' at the end of test[]
+        test = ' '.join(test)
+        periodPos = test.index('.')
+        test = test[:periodPos-1] + test[periodPos:]
     else:
         test=Sentence.split()
         for word in test:
             test[test.index(word)]=word[::-1]
-
-    return ' '.join(test)
+        test=' '.join(test)
+    return test
 
 print(rev_each_word_in(Sentence='to be or not to be that is the question.'))
 print(rev_each_word_in(Sentence='to be or not to be that is the question'))

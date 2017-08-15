@@ -1,3 +1,4 @@
+#YOUTUBE VIDEO of powerpoint: https://youtu.be/DhLMyyw6-X8
 import turtle
 testTurt = turtle.Turtle()
 testTurt.speed(1)
@@ -5,7 +6,7 @@ wn = turtle.Screen()
 wn.bgcolor("lightgreen")
 wn.title("wnInfo")
 testTurt.penup()
-#turtle.tracer(0,0)
+turtle.tracer(0,0)
 
 def createPolys(poly1,poly2,poly3,poly4,color1,color2):
     '''Registers a new shape that replaces the turtle out of poly1 through poly4. Applies colors c1 and c2 to the specified polys'''
@@ -72,7 +73,7 @@ def createPattern(magVal,color1,color2, times):
             if not i%2==0:
                 createSquare(magVal,color1,color2)
                 squareCount+=1
-            if i%2==0:
+            elif i%2==0:
                 createSquare(magVal,color2,color1)
                 squareCount+=1
         color1,color2=swapColors(color1,color2) #assigns the new color values after being swapped after the if statement is executed
@@ -90,6 +91,6 @@ poly2 = ((20,0),(30,0),(20,-10),(10,-10),(10,-20),(0,-30),(0,-20),(10,-10))
 poly3 = ((30,-10),(30,0),(20,-10),(10,-10),(10,-20),(0,-30),(10,-30))
 poly4 = ((10,-30),(30,-30),(30,-10))
 
-createPattern(.75,'blue', 'red',4)
+createPattern(1,'black', 'blue',4)
 
 wn.exitonclick()
