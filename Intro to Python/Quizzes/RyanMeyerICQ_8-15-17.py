@@ -58,16 +58,31 @@ for n in range(1,13):
 def longest_A_sequence(From, To):
     '''returns the longest A_sequence(n) (OR SEQUENCES~!) for 1<=From<=n<=135, together with the lengt of the sequence(s).'''
     longest=[]
-    longestLen=0
+    longestLen=[]
+    previousLen=0
+    test=[]
     while (From>=1) and (From<=To):
         if len(longest)<= len(A_sequence(From)):
             longest.append(A_sequence(From))
         From+=1
-
-    for i in range(0,len(longest),1):
-        if longestLen<=len(longest[i]):
-            longestLen=len(longest[i])
-            
-    print(len(longest[i]))
-    return longest, longestLen
+    for i in longest:
+        length = len(i)
+        longestLen.append(length)
+    zipped=list(zip(longest,longestLen))
+    # print(zipped)
+    for i in zipped:
+        if i[1]>=previousLen:
+            maxL=i[1]
+        previousLen=i[1]
+    for i in zipped:
+        if i[1]==maxL:
+            # print(maxL)
+            test.append(i)
+    # print(test)
+    return test
 print(longest_A_sequence(1,135))
+lower=1
+upper=22
+print('TESTING. The longest a_sequence(s) for range of {} to {} is: {} with length: {}'.format(lower,upper,longest_A_sequence(lower, upper)[:],longest_A_sequence(lower,upper)[0][1]))
+# seq_w_mx_Ln, mx_Ln = longest_A_sequence(1,12)
+# print('Max length is {0} for A sequences from {1} to {2}.'.format(mx_Ln,1,12))
